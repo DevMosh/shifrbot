@@ -1,3 +1,7 @@
+import os
+
+from Crypto.Cipher import PKCS1_OAEP, AES
+
 alphabet = 'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 
 
@@ -15,7 +19,6 @@ def caesar_cipher(word, key):
     return result
 
 
-
 def decrypt_caesar_cipher(word, key):
     result = ''
     word = word
@@ -27,6 +30,7 @@ def decrypt_caesar_cipher(word, key):
 
     print('расшифровка:', result)
     return result
+
 
 #
 
@@ -44,6 +48,7 @@ def vigener_cipher(word, key):
 
     print(result)
     return result
+
 
 #
 
@@ -69,10 +74,11 @@ def atbash_cipher(word):
 
     for i in word:
         num = 32 - alphabet.find(i)
-        result += alphabet[num-1]
+        result += alphabet[num - 1]
 
     print(result)
     return result
+
 
 #
 
@@ -96,6 +102,8 @@ def decrypt_polybian_square_cipher(word, key):
         result += alphabet[num]
     print(result)
     return result
+
+
 #
 
 # ТРИСЕМИУС
@@ -260,3 +268,6 @@ def decrypt_polybian_square_cipher(word, key):
 #
 #     print(result)
 #     resultLabel13["text"] = f"Результат: {result}"
+
+
+
